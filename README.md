@@ -1,6 +1,7 @@
 # Aplikacja Cat Facts
 
-Prosta aplikacja oparta na Angular, która wyświetla losowe ciekawostki o kotach z mechanizmem doczytywania podczas scrollowania.
+Prosta aplikacja oparta na Angular, która wyświetla losowe ciekawostki o kotach z mechanizmem doczytywania podczas scrollowania. <br /><br />
+Wersja live preview jest dostępna pod linkiem <a href="https://cat-fact-app2024.netlify.app/login" target="_blank">https://cat-fact-app2024.netlify.app</a>.
 
 ## **Informacje o projekcie**
 
@@ -20,7 +21,7 @@ Aplikacja składa się z dwóch ekranów:
 1. **Sklonuj repozytorium**:
    ```bash
    git clone https://github.com/DawidZacher/cat-fact.git
-   cd cat-facts-app
+   cd cat-fact
    ```
 2. **Zainstaluj node_modules**:
    ```bash
