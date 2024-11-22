@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
-import { BehaviorSubject, tap } from 'rxjs';
+import { BehaviorSubject, finalize, tap } from 'rxjs';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { CatApiService } from '../../core/api/cat-api.service';
@@ -41,33 +41,32 @@ export class CatFactsComponent implements OnInit {
     this.checkContainerHeight();
   }
 
-  private fetchCatFact(): void {
-    this.loading = true;
-    this.catApiService
-      .getCatFacts()
-      .pipe(
-        tap((response) => {
-          if (!this.checkDuplicateFacts(response.data[0])) {
-            this.loading = false;
-            this.catFactList$.next([
-              ...this.catFactList$.value,
-              ...response.data,
-            ]);
-            this.checkContainerHeight();
-            return;
-          }
-          this.fetchCatFact();
-        })
-      )
-      .subscribe();
-  }
-
   public onScroll(): void {
     this.fetchCatFact();
   }
 
   public logout(): void {
     this.authService.logout();
+  }
+
+  private fetchCatFact(): void {
+    this.loading = true;
+    this.catApiService
+      .getCatFacts()
+      .pipe(
+        tap((response: string[]) => {
+          if (!this.checkDuplicateFacts(response[0])) {
+            this.loading = false;
+            this.catFactList$.next([...this.catFactList$.value, ...response]);
+            return this.checkContainerHeight();
+          }
+          this.fetchCatFact();
+        }),
+        finalize(() => {
+          this.loading = false;
+        })
+      )
+      .subscribe();
   }
 
   private checkDuplicateFacts(catFact: string): boolean {

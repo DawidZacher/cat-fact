@@ -12,9 +12,7 @@ describe('CatFactsComponent', () => {
 
   beforeEach(async () => {
     mockCatApiService = jasmine.createSpyObj('CatApiService', ['getCatFacts']);
-    mockCatApiService.getCatFacts.and.returnValue(
-      of({ data: ['Fact 1', 'Fact 2'] })
-    );
+    mockCatApiService.getCatFacts.and.returnValue(of(['Fact 1', 'Fact 2']));
 
     await TestBed.configureTestingModule({
       imports: [CatFactsComponent],

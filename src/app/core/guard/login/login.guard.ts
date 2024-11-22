@@ -17,7 +17,7 @@ export const loginGuard: CanActivateFn = ({ data }: ActivatedRouteSnapshot) => {
     }
   } else {
     if (!isAuthenticated) {
-      router.navigate([LOGIN]);
+      router.navigate([LOGIN], { replaceUrl: true });
       return false;
     }
   }
