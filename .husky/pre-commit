@@ -3,4 +3,4 @@
 
 npm run lint:fix
 npm run prettier
-npm test
+npm run test:no-watch

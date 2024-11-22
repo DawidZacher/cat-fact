@@ -1,27 +1,41 @@
-# CatFactApp
+# Aplikacja Cat Facts
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+Prosta aplikacja oparta na Angular, która wyświetla losowe ciekawostki o kotach z mechanizmem doczytywania podczas scrollowania.
 
-## Development server
+## **Informacje o projekcie**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Aplikacja składa się z dwóch ekranów:
 
-## Code scaffolding
+- Ekran logowania: prosty formularz logowania po stronie klienta, obejmujący walidację wprowadzonych danych
+- Ekran faktów o kotach: mozliwosc przejścia dopiero po zalogowaniu, podczas scrollowania dane będą się doczytywać automatycznie, uwzględniając walidację powtórzonych ciekawostek.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech stack
 
-## Build
+- Angular v18
+- ngx-infinite-scroll
+- .husky
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## **Instalacja**
 
-## Running unit tests
+1. **Sklonuj repozytorium**:
+   ```bash
+   git clone https://github.com/DawidZacher/cat-fact.git
+   cd cat-facts-app
+   ```
+2. **Zainstaluj node_modules**:
+   ```bash
+   npm install
+   ```
+3. **Uruchomienie aplikacji**
+   ```bash
+   npm run start
+   ```
+   Projekt otworzy się automatyczniena porcie 4200.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## **Testy**
 
-## Running end-to-end tests
+**Aby uruchomić testy jednostkowe skorzystaj z polecenia**:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm run test
+```
