@@ -1,7 +1,7 @@
 # Aplikacja Cat Facts
 
 Prosta aplikacja oparta na Angular, która wyświetla losowe ciekawostki o kotach z mechanizmem doczytywania podczas scrollowania. <br /><br />
-Wersja live preview jest dostępna pod linkiem <a href="https://cat-fact-app2024.netlify.app/login" target="_blank">https://cat-fact-app2024.netlify.app</a>.
+Wersja live preview jest dostępna pod linkiem <a href="https://cat-facts-app2024.netlify.app/login" target="_blank">https://cat-facts-app2024.netlify.app/login</a>.
 
 ## **Informacje o projekcie**
 
