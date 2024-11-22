@@ -1,5 +1,5 @@
-import { Routes } from '@angular/router'
-import { loginGuard } from './core/guard/login/login.guard'
+import { Routes } from '@angular/router';
+import { loginGuard } from './core/guard/login/login.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -17,4 +17,4 @@ export const routes: Routes = [
     canActivate: [loginGuard],
   },
   { path: '**', redirectTo: '' },
-]
+];

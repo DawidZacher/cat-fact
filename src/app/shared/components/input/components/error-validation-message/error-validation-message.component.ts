@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
-import { ValidationErrors } from '@angular/forms'
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-error-validation-message',
@@ -9,10 +9,10 @@ import { ValidationErrors } from '@angular/forms'
   styleUrl: './error-validation-message.component.scss',
 })
 export class ErrorValidationMessageComponent {
-  public errorMessage: string | null
+  public errorMessage: string | null;
 
   @Input() set errors(errors: ValidationErrors | null) {
-    this.errorMessage = errors ? this.getErrorMessage(errors) : null
+    this.errorMessage = errors ? this.getErrorMessage(errors) : null;
   }
 
   private getErrorMessage(errors: ValidationErrors): string {
@@ -20,9 +20,8 @@ export class ErrorValidationMessageComponent {
       required: 'Pole jest wymagane',
       email: 'Podaj prawidłowy adres email',
       password: 'Podaj prawidłowe hasło',
-    }
+    };
 
-    const firstErrorKey = Object.keys(errors)[0]
-    return errorMessages[firstErrorKey]
+    return errorMessages[Object.keys(errors)[0]];
   }
 }

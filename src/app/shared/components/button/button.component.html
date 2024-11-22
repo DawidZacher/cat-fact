@@ -1,4 +1,13 @@
-<button [type]="type()" class="button" [disabled]="loading() || disabled()">
+<button
+  class="button"
+  [ngClass]="{
+    'button-default': variant() === 'default',
+    'button-text': variant() === 'text',
+  }"
+  [type]="type()"
+  [disabled]="loading() || disabled()"
+  (click)="onPress.emit()"
+>
   @if (!loading()) {
     <span>{{ label() }}</span>
   }

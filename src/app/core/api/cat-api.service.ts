@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http'
-import { Injectable } from '@angular/core'
-import { Observable } from 'rxjs'
-import { CatFactResponse } from '../../shared/models/cat-response.model'
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CatFactResponse } from '../../shared/models/cat-response.model';
 
 @Injectable()
 export class CatApiService {
@@ -10,6 +10,6 @@ export class CatApiService {
   public getCatFacts(): Observable<CatFactResponse> {
     return this.httpClient.get<CatFactResponse>(
       'https://meowfacts.herokuapp.com/'
-    )
+    );
   }
 }

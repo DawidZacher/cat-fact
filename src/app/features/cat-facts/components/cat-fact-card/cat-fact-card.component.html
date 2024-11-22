@@ -1,0 +1,8 @@
+<div class="fact-container" [ngStyle]="{ height: cardHeight + 'px' }">
+  <div class="fact-info">
+    <img src="cat-avatar.jpeg" alt="Cat Avatar" class="avatar" />
+    <h3>Cat-fact #{{ count() + 1 }}</h3>
+  </div>
+
+  <p>{{ fact() }}</p>
+</div>

@@ -4,13 +4,24 @@
   background: none;
   border: none;
   outline: none;
-  height: 50px;
-  padding: 0 40px;
+
   cursor: pointer;
-  border-radius: 8px;
   width: 100%;
-  background-color: $pink;
-  margin-top: $space-base;
+
+  &-default {
+    height: 50px;
+    padding: 0 40px;
+    border-radius: 8px;
+    background-color: $blue;
+    margin-top: $space-base;
+    color: $white;
+  }
+
+  &-text {
+    height: 30px;
+    color: $blue;
+    font-weight: 700;
+  }
 
   &[disabled] {
     cursor: default;

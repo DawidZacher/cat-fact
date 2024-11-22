@@ -1,0 +1,41 @@
+@import '../../../../../variables';
+
+.fact-container {
+  background-color: rgb(222, 240, 230);
+  border-radius: 8px;
+  width: 450px;
+  padding: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+
+  h3,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    margin-top: 5px;
+    font-size: 14px;
+    padding-left: calc($space-base + 4rem);
+    @include break-line;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.fact-info {
+  display: flex;
+  align-items: center;
+  gap: $space-base;
+
+  h3 {
+    font-size: $base;
+    font-weight: 700;
+  }
+}

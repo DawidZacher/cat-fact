@@ -1,1 +1,21 @@
-<p>cat-facts works!</p>
+<div
+  class="search-results"
+  infiniteScroll
+  [infiniteScrollDistance]="1"
+  [scrollWindow]="false"
+  (scrolled)="onScroll()"
+>
+  <div class="search-results-info">
+    <h2>Did you know that...</h2>
+    <app-button label="Logout" variant="text" (onPress)="logout()"></app-button>
+  </div>
+  @for (item of catFactList$ | async; track $index) {
+    <app-cat-fact-card [fact]="item" [count]="$index"></app-cat-fact-card>
+  }
+</div>
+
+<div class="loader">
+  @if (loading) {
+    <app-loader></app-loader>
+  }
+</div>

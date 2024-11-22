@@ -1,5 +1,5 @@
-import { NgOptimizedImage } from '@angular/common'
-import { ChangeDetectionStrategy, Component, input } from '@angular/core'
+import { NgOptimizedImage } from '@angular/common';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-loader',
@@ -10,6 +10,6 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core'
   styleUrl: './loader.component.scss',
 })
 export class LoaderComponent {
-  width = input(50)
-  height = input(50)
+  width = input(50);
+  height = input(50);
 }
