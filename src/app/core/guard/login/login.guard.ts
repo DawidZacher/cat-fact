@@ -1,17 +1,25 @@
 import { inject } from '@angular/core';
-import { CanActivateFn, Router } from '@angular/router';
+import { CanActivateFn, Router, ActivatedRouteSnapshot } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
-import { firstValueFrom } from 'rxjs';
-import { LOGIN } from '../../../utils/const';
+import { CAT_FACTS, LOGIN } from '../../../utils/const';
 
-export const loginGuard: CanActivateFn = async () => {
+export const loginGuard: CanActivateFn = ({ data }: ActivatedRouteSnapshot) => {
   const router: Router = inject(Router);
   const authService: AuthService = inject(AuthService);
-  const isAuthenticated = await firstValueFrom(authService.getAuth);
 
-  if (!isAuthenticated) {
-    router.navigate([LOGIN], { replaceUrl: true });
-    return false;
+  const isAuthenticated = authService.getAuthState;
+  const redirectIfLoggedIn = data['redirectIfLoggedIn'] as boolean;
+
+  if (redirectIfLoggedIn) {
+    if (isAuthenticated) {
+      router.navigate([CAT_FACTS]);
+      return false;
+    }
+  } else {
+    if (!isAuthenticated) {
+      router.navigate([LOGIN]);
+      return false;
+    }
   }
 
   return true;

@@ -9,6 +9,7 @@
     <h2>Did you know that...</h2>
     <app-button label="Logout" variant="text" (onPress)="logout()"></app-button>
   </div>
+
   @for (item of catFactList$ | async; track $index) {
     <app-cat-fact-card [fact]="item" [count]="$index"></app-cat-fact-card>
   }

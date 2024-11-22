@@ -1,6 +1,8 @@
 @import '../../../../../../variables';
 
 .error-message {
-  font-size: 12px;
+  display: block;
+  font-size: $xs;
   color: $error;
+  margin-top: $space-xs;
 }

@@ -11,6 +11,22 @@
     flex-direction: column;
     max-width: 400px;
     margin: auto;
+    @media only screen and (max-width: map-get($breakpoints, 'lg')) {
+      width: 100%;
+      padding: $space-l;
+    }
+
+    h1 {
+      padding: 0;
+      margin: 0;
+    }
+
+    p {
+      text-align: center;
+      font-size: $base;
+      color: $grey;
+      margin-bottom: $space-large;
+    }
 
     form {
       width: 100%;
@@ -25,6 +41,9 @@
 
   &__image {
     width: 55%;
+    @media only screen and (max-width: map-get($breakpoints, 'lg')) {
+      display: none;
+    }
 
     img {
       height: 100%;

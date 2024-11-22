@@ -5,6 +5,7 @@ $disabled: rgb(223, 223, 223);
 $blue: rgb(67, 127, 255);
 $grey: rgb(188, 188, 188);
 $white: rgb(255, 255, 255);
+$light-green: rgb(222, 240, 230);
 
 // font-size
 $xs: 1.2rem;
@@ -14,7 +15,9 @@ $xl: 2.4rem;
 // spaces
 $space-xs: 0.5rem;
 $space-base: 1rem;
+$space-l: 1.5rem;
 $space-xl: 2rem;
+$space-large: 4rem;
 
 // mixins
 @mixin break-line {
@@ -24,3 +27,21 @@ $space-xl: 2rem;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@mixin position($direction) {
+  display: flex;
+
+  @if $direction == horizontal {
+    justify-content: center;
+  } @else if $direction == vertical {
+    align-items: center;
+  } @else if $direction == center {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// breakpoints
+$breakpoints: (
+  'lg': 1024px,
+);

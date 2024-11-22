@@ -1,6 +1,7 @@
+@import '../../../../variables';
+
 .loader-container {
-  display: flex;
-  justify-content: center;
+  @include position('horizontal');
 
   &-image {
     transition-duration: 500;

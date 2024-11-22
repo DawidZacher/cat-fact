@@ -1,6 +1,8 @@
 @import '../../../../variables';
 
 .input-container {
+  display: flex;
+  flex-direction: column;
   margin-bottom: $space-base;
 
   .label {
@@ -10,9 +12,8 @@
   }
 
   input {
-    padding: 12px;
+    padding: $space-l;
     display: block;
-    width: 100%;
     border: 1px solid $grey;
     border-radius: 6px;
     outline: none;
@@ -21,6 +22,10 @@
     &:focus {
       transition: border-color 0.3s ease;
       border-color: $focus;
+    }
+
+    &.invalid {
+      border-color: $error;
     }
   }
 }

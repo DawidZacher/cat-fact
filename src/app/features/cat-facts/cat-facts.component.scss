@@ -1,23 +1,21 @@
+@import '../../../variables';
+
 .search-results {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 90vh;
+  margin: 0 auto;
+  @include position('vertical');
+  flex-direction: column;
   overflow-y: auto;
 
   &-info {
-    display: flex;
+    @include position('vertical');
     justify-content: space-between;
-    align-items: center;
     width: 450px;
-    margin-bottom: 15px;
+    margin-bottom: $space-l;
   }
 }
 
 .loader {
   height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include position('center');
 }

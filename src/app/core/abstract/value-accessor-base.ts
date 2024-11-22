@@ -38,8 +38,4 @@ export abstract class ValueAccessorBase<T> implements ControlValueAccessor {
   get isInvalid(): boolean {
     return !!this.ngControl.touched && !!this.ngControl.invalid;
   }
-
-  get isValid(): boolean {
-    return !!this.ngControl.dirty && !!this.ngControl.valid;
-  }
 }

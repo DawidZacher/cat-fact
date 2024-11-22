@@ -1,46 +1,32 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, delay, Observable, of, tap } from 'rxjs';
+import { delay, Observable, of, tap } from 'rxjs';
 import { LoginUser } from '../../../shared/models/auth.model';
-import { CAT_FACTS, IS_LOGGIN, LOGIN } from '../../../utils/const';
+import { CAT_FACTS, AUTH_TOKEN, LOGIN, JWT } from '../../../utils/const';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private auth$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
-  constructor(private router: Router) {
-    this.auth$.next(this.getLoginStatus);
-  }
+  constructor(private router: Router) {}
 
   public loginUser({ email, password }: LoginUser): Observable<unknown> {
     // Mock API login request //
     return of({ email, password }).pipe(
       delay(1000),
       tap(() => {
-        localStorage.setItem(IS_LOGGIN, 'true');
-        this.setAuth = true;
-        this.router.navigate([CAT_FACTS], { replaceUrl: true });
+        localStorage.setItem(AUTH_TOKEN, JWT);
+        this.router.navigate([CAT_FACTS]);
       })
     );
   }
 
-  public get getAuth(): Observable<boolean> {
-    return this.auth$.asObservable();
+  public get getAuthState(): boolean {
+    return localStorage.getItem(AUTH_TOKEN) === JWT;
   }
 
   public logout(): void {
-    localStorage.removeItem(IS_LOGGIN);
-    this.setAuth = false;
+    localStorage.removeItem(AUTH_TOKEN);
     this.router.navigate([LOGIN]);
-  }
-
-  private set setAuth(isAuth: boolean) {
-    this.auth$.next(isAuth);
-  }
-
-  private get getLoginStatus(): boolean {
-    return localStorage.getItem(IS_LOGGIN) === 'true';
   }
 }

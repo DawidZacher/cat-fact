@@ -8,6 +8,7 @@
     (input)="onValueChange(input.value)"
     (blur)="emitTouchEvent()"
     [placeholder]="placeholder()"
+    [ngClass]="{ invalid: isInvalid }"
   />
 
   @if (isInvalid) {

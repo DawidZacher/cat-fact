@@ -1,12 +1,15 @@
 @import '../../../../../variables';
 
 .fact-container {
-  background-color: rgb(222, 240, 230);
+  background-color: $light-green;
   border-radius: 8px;
   width: 450px;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: $space-base;
   overflow: hidden;
+  @media only screen and (max-width: map-get($breakpoints, 'lg')) {
+    max-width: 450px;
+  }
 
   h3,
   p {
@@ -15,8 +18,8 @@
   }
 
   p {
-    margin-top: 5px;
-    font-size: 14px;
+    font-size: $base;
+    margin-top: $space-xs;
     padding-left: calc($space-base + 4rem);
     @include break-line;
   }
@@ -30,8 +33,7 @@
 }
 
 .fact-info {
-  display: flex;
-  align-items: center;
+  @include position('vertical');
   gap: $space-base;
 
   h3 {
