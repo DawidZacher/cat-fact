@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { CatFactsComponent } from './cat-facts.component'
+import { ButtonComponent } from './button.component'
 
-describe('CatFactsComponent', () => {
-  let component: CatFactsComponent
-  let fixture: ComponentFixture<CatFactsComponent>
+describe('ButtonComponent', () => {
+  let component: ButtonComponent
+  let fixture: ComponentFixture<ButtonComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CatFactsComponent],
+      imports: [ButtonComponent],
     }).compileComponents()
 
-    fixture = TestBed.createComponent(CatFactsComponent)
+    fixture = TestBed.createComponent(ButtonComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })

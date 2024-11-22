@@ -1,1 +1,33 @@
-<p>login works!</p>
+<main class="container">
+  <section class="container__form">
+    <h1 class="container__title">Cześć! Zaloguj się do aplikacji!</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <app-input
+        formControlName="email"
+        id="email"
+        label="Email"
+        placeholder="Podaj adres email"
+      ></app-input>
+      <app-input
+        formControlName="password"
+        type="password"
+        id="password"
+        label="Hasło"
+        placeholder="Podaj hasło"
+      ></app-input>
+
+      <app-button
+        label="Zaloguj się"
+        [loading]="isLoading"
+        [disabled]="loginForm.invalid"
+      ></app-button>
+    </form>
+  </section>
+  <section class="container__image">
+    <img
+      src="https://images.unsplash.com/photo-1501474466180-4704b8607ba5?q=50&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Zdjęcie kota"
+    />
+  </section>
+</main>

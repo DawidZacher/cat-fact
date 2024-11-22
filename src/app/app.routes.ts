@@ -1,12 +1,20 @@
-import { Routes } from '@angular/router';
-import { CAT_FACTS, LOGIN } from './utils/const';
+import { Routes } from '@angular/router'
+import { loginGuard } from './core/guard/login/login.guard'
 
 export const routes: Routes = [
-    { path: '', redirectTo: LOGIN, pathMatch: 'full' },
-    {
-        path: LOGIN,
-    },
-    {
-        path: CAT_FACTS,
-    },
-];
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./features/login/login.component').then((m) => m.LoginComponent),
+  },
+  {
+    path: 'cat-facts',
+    loadComponent: () =>
+      import('./features/cat-facts/cat-facts.component').then(
+        (m) => m.CatFactsComponent
+      ),
+    canActivate: [loginGuard],
+  },
+  { path: '**', redirectTo: '' },
+]

@@ -1,0 +1,18 @@
+<div class="input-container">
+  <label class="label" [for]="id()">{{ label() }}</label>
+  <input
+    #input
+    [id]="id()"
+    [type]="type()"
+    [value]="value"
+    (input)="onValueChange(input.value)"
+    (blur)="emitTouchEvent()"
+    [placeholder]="placeholder()"
+  />
+
+  @if (isInvalid) {
+    <app-error-validation-message
+      [errors]="ngControl.errors"
+    ></app-error-validation-message>
+  }
+</div>

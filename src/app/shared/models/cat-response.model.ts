@@ -1,3 +1,3 @@
 export interface CatFactResponse {
-    data: string[];
+  data: string[]
 }

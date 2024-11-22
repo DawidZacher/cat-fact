@@ -1,0 +1,19 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+
+  &-image {
+    transition-duration: 500;
+    animation: rotateAnimation 1.5s linear infinite;
+    margin: 0 auto;
+  }
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,26 @@
+@import '../../../../variables';
+
+.input-container {
+  margin-bottom: $space-base;
+
+  .label {
+    display: block;
+    font-size: $base;
+    margin-bottom: $space-xs;
+  }
+
+  input {
+    padding: 12px;
+    display: block;
+    width: 100%;
+    border: 1px solid $grey;
+    border-radius: 6px;
+    outline: none;
+    font-size: $base;
+
+    &:focus {
+      transition: border-color 0.3s ease;
+      border-color: $focus;
+    }
+  }
+}

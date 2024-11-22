@@ -1,0 +1,9 @@
+<button [type]="type()" class="button" [disabled]="loading() || disabled()">
+  @if (!loading()) {
+    <span>{{ label() }}</span>
+  }
+
+  @if (loading()) {
+    <app-loader [width]="25" [height]="25"></app-loader>
+  }
+</button>

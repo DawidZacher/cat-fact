@@ -1,0 +1,19 @@
+@import '../../../../variables';
+
+.button {
+  background: none;
+  border: none;
+  outline: none;
+  height: 50px;
+  padding: 0 40px;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%;
+  background-color: $pink;
+  margin-top: $space-base;
+
+  &[disabled] {
+    cursor: default;
+    background-color: $disabled;
+  }
+}
