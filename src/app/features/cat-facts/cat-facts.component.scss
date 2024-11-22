@@ -6,16 +6,30 @@
   @include position('vertical');
   flex-direction: column;
   overflow-y: auto;
+  @media only screen and (max-width: map-get($breakpoints, 'lg')) {
+    padding: 0 10px;
+  }
 
   &-info {
     @include position('vertical');
     justify-content: space-between;
     width: 450px;
     margin-bottom: $space-l;
+    @media only screen and (max-width: map-get($breakpoints, 'lg')) {
+      width: 100%;
+    }
   }
 }
 
-.loader {
+.footer {
   height: 80px;
+  position: relative;
   @include position('center');
+  &-shadow {
+    height: 2rem;
+    width: 100%;
+    position: absolute;
+    top: -1.9rem;
+    background: linear-gradient(0deg, $white 0%, rgba(255,255,255,0) 100%);
+  }
 }

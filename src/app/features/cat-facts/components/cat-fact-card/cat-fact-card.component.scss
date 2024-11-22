@@ -1,5 +1,9 @@
 @import '../../../../../variables';
-
+:host {
+  @media only screen and (max-width: map-get($breakpoints, 'lg')) {
+    width: 100%;
+  }
+}
 .fact-container {
   background-color: $light-green;
   border-radius: 8px;
@@ -8,7 +12,7 @@
   margin-bottom: $space-base;
   overflow: hidden;
   @media only screen and (max-width: map-get($breakpoints, 'lg')) {
-    max-width: 450px;
+    width: auto;
   }
 
   h3,
